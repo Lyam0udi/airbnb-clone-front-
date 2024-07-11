@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
+import * as string_decoder from "string_decoder";
+import {NgClass} from "@angular/common";
+import {FaIconComponent, FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @Component({
   selector: 'app-avatar',
   standalone: true,
-  imports: [],
+  imports: [
+    NgClass,
+    FaIconComponent,
+    FontAwesomeModule
+  ],
   templateUrl: './avatar.component.html',
   styleUrl: './avatar.component.scss'
 })
 export class AvatarComponent {
-
+  imageUrl = input<string>
+  avatarSize = input<"avatar-sm" | "avatar-xl">();
 }

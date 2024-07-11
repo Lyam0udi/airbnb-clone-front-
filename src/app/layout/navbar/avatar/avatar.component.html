@@ -1,1 +1,12 @@
-<p>avatar works!</p>
+<div class="flex align-content-center">
+  <div *ngIf="imageUrl() != null; else noImage">
+    <img [src]="imageUrl()" alt="user-avatar" class="border-round-3xl avatar"
+         [ngClass]="avatarSize()">
+  </div>
+  <ng-template #noImage>
+    <div class="flex align-items-center justify-content-center unknow-user"
+         [ngClass]="avatarSize()">
+      <fa-icon [icon]="'user'" class="text-dark"></fa-icon>
+    </div>
+  </ng-template>
+</div>

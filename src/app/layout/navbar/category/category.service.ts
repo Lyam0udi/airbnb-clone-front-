@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Category, CategoryName} from "./category.model";
 import {BehaviorSubject} from "rxjs";
 
@@ -6,6 +6,7 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class CategoryService {
+
   private categories: Category[] = [
     {
       icon: "eye",
@@ -158,9 +159,5 @@ export class CategoryService {
 
   getCategoryByTechnicalName(technicalName: CategoryName): Category | undefined {
     return this.categories.find(category => category.technicalName === technicalName);
-  }
-
-  constructor(){
-
   }
 }

@@ -1,12 +1,11 @@
 <div class="flex align-content-center">
-  <div *ngIf="imageUrl() != null; else noImage">
-    <img [src]="imageUrl()" alt="user-avatar" class="border-round-3xl avatar"
+  @if(imageUrl() != null) {
+    <img src="{{imageUrl()}}" alt="user-avatar" class="border-round-3xl avatar"
          [ngClass]="avatarSize()">
-  </div>
-  <ng-template #noImage>
+  } @else {
     <div class="flex align-items-center justify-content-center unknow-user"
-         [ngClass]="avatarSize()">
+    [ngClass]="avatarSize()">
       <fa-icon [icon]="'user'" class="text-dark"></fa-icon>
     </div>
-  </ng-template>
+  }
 </div>
